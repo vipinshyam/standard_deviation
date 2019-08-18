@@ -1,0 +1,43 @@
+#initiate a container to store the 3 user input numbers
+my_num = []
+
+#capture the three number inputs
+for i in range(3):
+    my_num.append(int(input("Enter value:")))
+
+#declare variable to store the sum & average
+sum = 0
+avg = 0
+
+#calculate the sum & average stored in the list my_num
+for i in range(3):
+    sum += my_num[i]
+    avg = sum / 3
+    
+#print the sum & average 
+print('\n',"sum",sum,"average",avg,'\n')
+
+#initiate variable to capture the difference from mean 
+#in a new list diff_mean & to sum that up
+
+diff_mean = []
+new_total = 0
+
+#
+for i in range(3):  
+    diff_mean.append(avg - my_num[i])
+    #print the diff from mean & its square
+    print("difference from mean",diff_mean[i],"square",diff_mean[i]**2,'\n')
+    #sum up the squares of the diff from mean in new_total variable
+    new_total += diff_mean[i]**2
+
+#check the total
+print("new_total",new_total,'\n')
+
+#formula for the sample std dev in the next two lines
+avg_two = new_total/(3-1)
+sqrt = (avg_two)**(0.5)
+
+#print std. dev
+print("std.dev",sqrt)
+
